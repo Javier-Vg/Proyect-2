@@ -1,10 +1,17 @@
+body{
+    background-color: black;
+    color: #fff;
+}
+
+
 .cont1{
     display: flex;
     flex-direction: column;
-    border: 1px solid ;
+    border: 1px solid;
     border-radius: 10px;
     margin-left: 100px;
     margin-right: 100px;
+    
 
 }
 
@@ -21,6 +28,7 @@ nav{
 nav ul{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 nav ul li a{
@@ -33,33 +41,37 @@ nav ul li{
 
 .cont2{
     display: flex;
-    margin-left: 230px;
-    margin-right: 230px;
-    
-    padding:15px ;
+    gap: 30px;
+    padding:25px;
     flex-direction: row;
+    justify-content: center;
 
 }
 
+
 section{
-    height: 400px;
+    height: 450px;
     border: 1px solid;
     border-radius: 10px;
     width: 300px;
+    width: 420px;
    
 
 }
 article{
-    height: 400px;
+    height: 450px;
     border: 1px solid;
     border-radius: 10px;
     width: 300px;
+    width: 420px;
 }
-
+label{
+    left: 0;
+}
 aside{
     border: 1px solid;
     border-radius: 10px;
-    width: 300px;
+    width: 500px;
 }
 
 .img-usuario{
@@ -85,10 +97,9 @@ p{
     font-size: 15px;
     height: 40px;
     width: 90px;
-
 }
-.btn-cancel{
-    
+
+.btn-close{
     background-color: #fff;
     color: #48e;
     border-radius: 10px;
@@ -96,4 +107,16 @@ p{
     font-size: 13px;
     height: 29px;
     width: 70px;
+}
+
+.modal1{
+    width: 450px;
+    border-radius: 20px;
+
+
+}
+
+
+.modal1::backdrop{
+    background-color: #0003;
 }

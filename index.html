@@ -13,13 +13,12 @@
         </header>
         <nav>
             <ul>
-                
                 <li><a href="#">Sobre mi</a></li>
                 <li><a href="#">Proyecto</a></li>
                 <li><a href="#">Habilidades</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li><a href="#">Registrarse</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a id="openM2" href="#">Registrarse</a></li>
+                <li><a id="openM1" href="#">Login</a></li>
                 
              </ul>
         </nav>
@@ -27,11 +26,13 @@
 
    <div class="cont2">
 
-    <div>
+    <div >
         <section>
             <h2>Sobre mi</h2>
             
         </section>
+        <br>
+        <br>
         <article>
             <h2>Habilidad</h2>
         </article>
@@ -44,14 +45,35 @@
 
    </div>
 
-   <footer>
+   
+   
+   <!--Modal Login-->
+   <dialog class="modal1">
+    <div class="div-login">
+        <img class="img-usuario" src="img/usuario-img-removebg-preview.png" alt="">
+        <p>Member Login</p>
+        <br>
+        <label >Correo:</label>
+        <br>
+        <input id="login1" type="text">
+        <br>
+        <br>
+        <label for="login2">Contraseña:</label>
+        <br>
+        <input id="login2" type="text">
+        <br>
+        <br>
+        <button  class="btn-login">Login</button>
+        <br>
+        <br>
+        <button id="closeM1"  class="btn-close">Cerrar</button>
+    </div>
+   </dialog>
+   
 
-   </footer>
-
    
-   <!--Login- esto va encerrado de la etiqueta dialog-->
-   
-   
+   <!--Modal registrarse-
+   <dialog class="modal2">
     <div class="div-login">
         <img class="img-usuario" src="img/usuario-img-removebg-preview.png" alt="">
         <p>Member Login</p>
@@ -68,7 +90,13 @@
         <button class="btn-cancel">Cancelar</button>
 
     </div>
+   </dialog>
+   -->
    
+   <footer>
+
+   </footer>
+
     
 
   
