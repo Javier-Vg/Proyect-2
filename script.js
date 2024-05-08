@@ -40,21 +40,17 @@ function Login() {
 
     if ( localStorage.getItem(CorreoVerific)) {
 
-
         let llave = JSON.parse(localStorage.getItem(CorreoVerific));
-        console.log(llave.Contraseña);
-
-        if (localStorage.getItem(CorreoVerific, /*encontra la manera de verificar la contraseña*/ )) {
-
-            //let llave = JSON.parse(localStorage.getItem(CorreoVerific));
-            console.log("Estos son sus Datos personales:");
-            console.log(llave.Correo);
-            console.log(llave.Contraseña);
-            console.log(llave.Nombre);
-
-        }else{
-            alert("La contraseña es incorrecta");
-        }
+        
+         if (ContraVerific.trim() === llave.Contraseña.trim()) {
+              console.log("Estos son sus Datos personales:");
+              console.log(llave.Correo);
+              console.log(llave.Contraseña);
+              console.log(llave.Nombre);
+           
+         }else{
+             alert("La contraseña es incorrecta");
+         }
     }else{
         alert("El correo no existe");
     }
