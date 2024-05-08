@@ -1,37 +1,53 @@
+let cont_nom = document.getElementById("cont-nom");
+let cont_correo = document.getElementById("cont-correo");
+let cont_direccion = document.getElementById("cont-direccion");
+//let nombre = document.getElementById("nombre");
+//let nombre = document.getElementById("nombre");
+//let nombre = document.getElementById("nombre");
+//let nombre = document.getElementById("nombre");
+let nombre = document.getElementById("nombre");
+let Correo = document.getElementById("register1");
+let Contraseña = document.getElementById("register2");
+let Direccion = document.getElementById("register3");
+
+let registros = [];
 //Esto es del locage storage
 function RegistrarUsuario(){
-    console.log("jajajajaaj");
-    let nombre = document.getElementById("nombre");
-    let Correo = document.getElementById("register1");
-    let Contraseña = document.getElementById("register2");
 
-    const persona ={
+    persona ={
         Nombre: nombre.value,
         Correo: Correo.value,
-        Contraseña : Contraseña.value
+        Contraseña : Contraseña.value,
+        Direccion : Direccion.value
     };
-    
-   //Esto añade los elementos al storage, la llave de los elementos son el correo asignado a los inputs
-   //LAS LLAVES SON EL CORREO
-   localStorage.setItem((Correo.value), JSON.stringify( persona ));
+
 
    
+    let registro = JSON.parse(localStorage.getItem("registros"));
+    
+    //Hacer un for para recorrer todos los elementos del loclStrage!!!!!!!!!!!!!!!!!!!!
+    if (Correo.value != registro[0].Nombre) {
+        registros = JSON.parse(localStorage.getItem("registros")) || [];
 
-   //Esto imprime a fomato lista
-   //console.log(JSON.parse(localStorage.getItem('llave7',)));// asi accedemos al tercer elemento del array del localstorage
+        registros.push(persona);
 
-
-
-   //Imprime el valor de la llave, en este caso el del valor de "Correo".
-   //let llave = JSON.parse(localStorage.getItem('llave7'));
-   //console.log(llave.Correo);
+        localStorage.setItem("registros", JSON.stringify(registros));
+    }else{
+        alert("El correo ya existe!");
+        
+    }
+    //console.log(JSON.parse(localStorage.getItem("registros")));
+    
 }
 
 
 
+//Imprime el valor de la llave, en este caso el del valor de "Correo".
+//let llave = JSON.parse(localStorage.getItem('llave7'));
+//console.log(llave.Correo);
 
 
-//Condicionales
+
 function Login() {
     //El correo es la llave
 
@@ -43,10 +59,16 @@ function Login() {
         let llave = JSON.parse(localStorage.getItem(CorreoVerific));
         
          if (ContraVerific.trim() === llave.Contraseña.trim()) {
-              console.log("Estos son sus Datos personales:");
-              console.log(llave.Correo);
-              console.log(llave.Contraseña);
-              console.log(llave.Nombre);
+              alert("Haz cambiado de perfil a "+llave.Nombre);
+              cont_nom.innerHTML = llave.Nombre;
+              cont_correo.innerHTML = llave.Correo;
+              cont_direccion.innerHTML = llave.Direccion;
+              
+
+
+              //console.log(llave.Correo);
+              //console.log(llave.Contraseña);
+              //console.log(llave.Nombre);
            
          }else{
              alert("La contraseña es incorrecta");
@@ -55,6 +77,8 @@ function Login() {
         alert("El correo no existe");
     }
 }
+
+
 
 //Loguearse modal
 let abrirModal = document.getElementById("openM1");
@@ -92,26 +116,5 @@ cerrarModal2.addEventListener("click", ()=>{
 
 
 
-
-/*locage storage
-
-const signForm = document.getElementById("#signupForm");
-signForm.addEventListener("submit", (e)=>{
-    e.preventDefault();
-    const nombre = document.getElementById("nombre").value;
-    const correo = document.getElementById("register1").value;
-    const contra = document.getElementById("register2").value;
-
-    const Users = JSON.parse(localStorage.getItem("#")) || [];
-    const isUserRegistred = Users.find(user => user.corre === correo);
-    if (isUserRegistred) {
-        return alert("El usuario ya esta registrado!");
-        
-    }
-    Users.push({nombre: nombre, correo: correo, contra: contra})
-    localStorage.setItem("users", JSON.stringify(Users))
-})*/
-
-//Feedback adrian
 
 
