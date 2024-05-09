@@ -32,6 +32,7 @@
                     <h2 id="cont-correo"  class="h2-perfil">example@gmail.com</h2>
                     <h2 id="cont-nom" class="h2-perfil">Arturito Vidal</h2>
                     <p id="cont-direccion" class="h2-perfil">Direccion</p>
+                    <button onclick="desLogearse()">Salir del perfil</button>
                 </div>
             </div>
             
@@ -57,6 +58,7 @@
 
     <aside>
         <h2>Proyectos</h2>
+        <button id="openM3">Añadir Proyecto</button>
 
     </aside>
 
@@ -105,7 +107,7 @@
             <input id="nombre" type="text" required autofocus>
             <br>
             <br>
-            <label for="login1" >Correo:</label>
+            <label for="register1" >Correo:</label>
             <br>
             <input id="register1" type="text" required>
             <br>
@@ -124,6 +126,40 @@
         </form>
         <br>
         <button id="closeM2"  class="btn-close">Cerrar</button>
+    </div>
+   </dialog>
+
+   <!--Modal portafolios-->
+   <dialog class="modal3">
+    <div class="div-porta">
+        
+        <p>Rellene la informacion</p>
+        <br>
+        <form >
+            <label for="nombre" >Titulo del proyecto:</label>
+            <br>
+            <input id="porta1" type="text" required autofocus>
+            <br>
+            <br>
+            <label>Descripcion de Proyecto:</label>
+            <br>
+            <input id="porta2" type="text" required>
+            <br>
+            <br>
+            <label>Año que lo realizo:</label>
+            <br>
+            <input id="porta3" type="password"  required>
+            <br>
+            <br>
+            <!-- <label>Direccion:</label>
+            <br>
+            <input id="porta4" type="text" required>
+            <br>
+            <br> -->
+            <input onclick=portafolios() class="btn-login" type="submit"  value="Registrarse">
+        </form>
+        <br>
+        <button id="closeM3" class="btn-close">Cerrar</button>
     </div>
    </dialog>
 

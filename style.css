@@ -9,6 +9,8 @@ body{
     display: flex;
     flex-direction: column;
     border: 1px solid;
+    position: sticky;
+    top: 0;
     /*
     border-radius: 10px;
     margin-left: 100px;
@@ -137,6 +139,9 @@ p{
 .div-register{
     text-align: center;
 }
+.div-porta{
+    text-align: center;
+}
 
 .btn-login{
     
@@ -169,6 +174,10 @@ p{
     width: 400px;
     border-radius: 20px;
 }
+.modal3{
+    width: 400px;
+    border-radius: 20px;
+}
 
 
 
@@ -177,6 +186,9 @@ p{
 }
 
 .modal2::backdrop{
+    background-color: #0003;
+}
+.modal3::backdrop{
     background-color: #0003;
 }
 
