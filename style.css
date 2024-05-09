@@ -199,3 +199,24 @@ input[type="submit"]:hover{
     width: 120px;
 
 }
+
+footer{
+    background-color: white;
+}
+footer p{
+    color: black;
+}
+
+/*Modificar el valor del div donde van a salir los proyectos*/
+/*Clases de las cajas*/
+.P-1{
+    
+}
+/*Contenedor de la cajas*/
+#P-1{
+    flex-direction: column;
+    border-color: #fff;
+    border: 1px solid ;
+    border-radius: 10px ;
+
+}

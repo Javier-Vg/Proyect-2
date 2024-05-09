@@ -52,10 +52,10 @@ function RegistrarUsuario(){
 //let llave = JSON.parse(localStorage.getItem('llave7'));
 //console.log(llave.Correo);
 
-
+//---------------------------------------------------------------------
 
 function Login() {
-    //El correo es la llave
+   
     let sesionIniciada = JSON.parse(localStorage.getItem("sesionAbierta"));
     let CorreoVerific = document.getElementById("login1").value;
     let ContraVerific = document.getElementById("login2").value;
@@ -65,33 +65,55 @@ function Login() {
         if (sesionIniciada) {
             alert("Debe de cerrar sesion para ingresar a un nuevo perfil !");
         } else {
+
             let datos = 3;
+
             for (let elemento in TotalRegistros) {
                 if (CorreoVerific == TotalRegistros[elemento].Correo) {
 
                     datos = 1;
 
                     if (ContraVerific == TotalRegistros[elemento].Contraseña) {
-                        
+    
                         datos = 2;
                         //Se encuentra el correo y crea una nueva llave en el localeStrg.
                         alert("Redirigiendo a su cuenta...");
                         cont_correo.innerHTML = TotalRegistros[elemento].Correo;
                         cont_nom.innerHTML =TotalRegistros[elemento].Nombre;
                         cont_direccion.innerHTML =TotalRegistros[elemento].Direccion;
-                        localStorage.setItem("sesionAbierta", JSON.stringify(TotalRegistros[elemento])); 
+                        localStorage.setItem("sesionAbierta", JSON.stringify(TotalRegistros[elemento]));
+
+                        //Extraccion de proyectos:
+                        proyectList = JSON.parse(localStorage.getItem("Proyectos"));
+                        for (const proyecto in proyectList) {
+
+                            if (CorreoVerific == proyectList[proyecto].Correo) {
+
+                                //Div donde van a ir los proyectos:
+                                let P_1 = document.getElementById("P-1");
+                                //Creacion de los contenedores
+                                const cont1 = document.createElement("div");
+                                cont1.classList.add("P-1");
+                                P_1.appendChild(cont1);
+
+                                cont1.innerHTML = proyectList[proyecto].titulo;
+                                cont1.innerHTML = proyectList[proyecto].descripcion;
+                                cont1.innerHTML = proyectList[proyecto].año;
+                            }
+                        }
+                        break;
                     }
                 }
             }
             //Verifica si el correo o la contraseña existian en el localStorage.
-            console.log(datos)
             if (datos == 1) {
                 alert("Contraseña inválida para el correo proporcionado.");
             }else if ( datos == 2){
-                dato = 2;
+                datos = 2;
             }else if(datos == 3){
                 alert("No existe ese correo. Registrese...");
             }
+            window.location.reload();
         }
     }else{ 
         alert("No existen correos registrados.");
@@ -99,51 +121,70 @@ function Login() {
     
 }
 
-
-
+//---------------------------------------------------------------------
 
 function desLogearse() {
     let usuario = localStorage.getItem("sesionAbierta");
     if (usuario) {
         alert("Cerrando sesion...");
-        localStorage.removeItem("sesionAbierta");
         cont_correo.innerHTML = "";
         cont_nom.innerHTML = "";
         cont_direccion.innerHTML = "";
-        
+        localStorage.removeItem("sesionAbierta");
+        //Elimina el contenido del apartado de los proyectos
+        //Div donde van a ir los proyectos:
+        let P_1 = document.getElementById("P-1");
+        console.log(P_1.contains); 
     }else{
-       alert("Aun no haz entrado a una cuenta.")
+       alert("Aun no haz entrado a una cuenta.");
     }
-    
 }
+
+//---------------------------------------------------------------------
 
 let titulo = document.getElementById("porta1");
 let descripcion = document.getElementById("porta2");
 let año = document.getElementById("porta3");
 
-let usuario = (localStorage.getItem("sesionAbierta"));
-
 let proyectList = [];
 proyectList = JSON.parse(localStorage.getItem("Proyectos"));
 
-//Corregir esto------------------------------------------------------------------------
-function portafolios() {
+function proyectos() {
     
+    let sesionIniciada = JSON.parse(localStorage.getItem("sesionAbierta"));
+
     let informacion ={
         titulo: titulo.value,
         descripcion: descripcion.value,
-        año : año.value,
-        usuario :usuario.Correo
+        //Error en volver a loguearse.
+        Correo : sesionIniciada.Correo,
+        año : año.value
+        
     };
-
     proyectList = JSON.parse(localStorage.getItem("Proyectos")) || [];
     proyectList.push(informacion);
-    localStorage.setItem("Proyectos", JSON.stringify(proyectList)); 
+    localStorage.setItem("Proyectos", JSON.stringify(proyectList));
 
+
+     //Div donde van a ir los proyectos:
+     let P_1 = document.getElementById("P-1");
+     //Creacion de los contenedores
+     const cont1 = document.createElement("div");
+     cont1.classList.add("P-1");
+     //P_1.appendChild(cont1);
+     //Ocupo guardar los valores en el conteedor que esta dentro del div padr que es "P-1"
+
+     let container1= cont1.appendChild(titulo.value);
+     P_1.appendChild();
+     P_1.appendChild(cont1.appendChild(descripcion.value));
+     P_1.appendChild(cont1.appendChild(año.value));
+
+     //cont1.appendChild(descripcion.value);
+     //cont1.appendChild(año.value);
 
 }
 
-
+//---------------------------------------------------------------------
 
 //Loguearse modal
 let abrirModal = document.getElementById("openM1");
@@ -161,6 +202,7 @@ cerrarModal.addEventListener("click", ()=>{
     
 })
 
+//---------------------------------------------------------------------
 
 //Regitrarse modal
 let abrirModal2 = document.getElementById("openM2");
@@ -178,6 +220,8 @@ cerrarModal2.addEventListener("click", ()=>{
     
 })
 
+//---------------------------------------------------------------------
+
 // portafolio modal
 let abrirModal3 = document.getElementById("openM3");
 let cerrarModal3 = document.getElementById("closeM3");
@@ -185,6 +229,7 @@ let Modal3 = document.querySelector(".modal3");
 
 
 abrirModal3.addEventListener("click", ()=>{
+    
     Modal3.showModal();
 
     })
