@@ -4,7 +4,6 @@ body{
     background-color: #48e4;
 }
 
-
 .cont1{
     display: flex;
     flex-direction: column;
@@ -24,7 +23,6 @@ div header h1{
 
 nav{
     background-color: #48e;
-
 }
 
 nav ul{
@@ -37,6 +35,7 @@ nav ul li a{
     text-decoration: none;
     color: white;
 }
+
 nav ul li{
     list-style: none;
 }
@@ -47,7 +46,6 @@ nav ul li{
     padding:25px;
     flex-direction: row;
     justify-content: center;
-
 }
 
 .section1{
@@ -57,17 +55,16 @@ nav ul li{
     height: 200px;
     width: 420px;
     background-color: white;
-
-    
     
 }
+
 .icons{
     width: 22px;
     height: 22px;
     fill: #fff;
 }
-section{
-    
+
+section{   
     height: 450px;
     border: 1px solid;
     border-radius: 10px;
@@ -75,8 +72,8 @@ section{
     width: 420px;
     border: 5px solid #48e;
     background-color: white;
-
 }
+
 .flex-section1{
     display: flex;
     justify-content: center;
@@ -132,12 +129,17 @@ h2{
 }
 
 
-.h2-perfil{
+.icons2{
+    width: 30px;
+    height: 30px;
+
+}
+#cont-correo, #cont-nom, #cont-direccion{
     margin-left: 10px;
     padding: 0;
     margin: 0;
     font-family: fuenteNueva2 !important;
-
+    
 }
 
 p{
@@ -156,14 +158,14 @@ p{
 }
 
 .btn-login{
-    
     background-color: #48e;
     color: #fff;
     border-radius: 10px;
     border-color: #48e;
     font-size: 15px;
     height: 40px;
-    width: 90px;
+    width: 170px;
+
 }
 
 .btn-close{
@@ -180,7 +182,6 @@ p{
     width: 450px;
     border-radius: 20px;
 
-
 }
 .modal2{
     width: 400px;
@@ -191,6 +192,17 @@ p{
     border-radius: 20px;
 }
 
+.modal4{
+    width: 300px;
+    border-radius: 20px;
+}
+
+.modal5{
+    width: 400px;
+    border-radius: 20px;
+    background-color: slateblue;
+    color: #fff;
+}
 
 
 .modal1::backdrop{

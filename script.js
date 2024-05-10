@@ -1,10 +1,7 @@
 let cont_nom = document.getElementById("cont-nom");
 let cont_correo = document.getElementById("cont-correo");
 let cont_direccion = document.getElementById("cont-direccion");
-//let nombre = document.getElementById("nombre");
-//let nombre = document.getElementById("nombre");
-//let nombre = document.getElementById("nombre");
-//let nombre = document.getElementById("nombre");
+
 let nombre = document.getElementById("nombre");
 let Correo = document.getElementById("register1");
 let Contraseña = document.getElementById("register2");
@@ -70,7 +67,7 @@ function Login() {
 
             for (let elemento in TotalRegistros) {
                 if (CorreoVerific == TotalRegistros[elemento].Correo) {
-
+                
                     datos = 1;
 
                     if (ContraVerific == TotalRegistros[elemento].Contraseña) {
@@ -107,6 +104,14 @@ function Login() {
                     }
                 }
             }
+
+
+            
+
+
+
+
+
             //Verifica si el correo o la contraseña existian en el localStorage.
             if (datos == 1) {
                 alert("Contraseña inválida para el correo proporcionado.");
@@ -139,7 +144,7 @@ function desLogearse() {
         
         for (const elemento in proyectList) {
             if (sesionIniciada.Correo == proyectList[elemento].Correo) {
-
+                
                 let contenido = document.querySelector(".P-1");
                 //contenido.style.display = "none";
                 
@@ -201,6 +206,53 @@ function proyectos() {
     
 }
 
+function AboutME() {
+    let descripcion_Personal = document.getElementById("descripPerson");
+    let Nacionalidad = document.getElementById("nacion");
+    let DondeVive = document.getElementById("pais");
+
+    let usuario = JSON.parse(localStorage.getItem("sesionAbierta"));
+    let InfoPersonal = [];
+
+    info ={
+        Descripcion: descripcion_Personal.value,
+        Nacion: Nacionalidad.value,
+        Contraseña : usuario.Contraseña,
+        Pais : DondeVive.value
+    };
+
+
+    InfoPersonal = JSON.parse(localStorage.getItem("SobreMi")) || [];
+    InfoPersonal.push(info);
+    localStorage.setItem("SobreMi", JSON.stringify(info));
+    alert("Su informacion personal se agrego exitosamente");
+}
+
+//---------------------------------------------------------------------
+
+
+function Skills() {
+    let campo1 = document.getElementById("camp1");
+    let campo2 = document.getElementById("camp2");
+    let campo3 = document.getElementById("camp3");
+
+    let skills = [];
+
+    let usuario = JSON.parse(localStorage.getItem("sesionAbierta"));
+
+    info ={
+        camp1: campo1.value,
+        camp2: campo2.value,
+        Correo : usuario.Correo,
+        camp3 : campo3.value
+    };
+
+    skills = JSON.parse(localStorage.getItem("skills")) || [];
+    skills.push(info);
+    localStorage.setItem("skills", JSON.stringify(info));
+    alert("Sus habilidades se agregaron exitosamente");
+}
+
 //---------------------------------------------------------------------
 
 //Loguearse modal
@@ -255,6 +307,46 @@ cerrarModal3.addEventListener("click", ()=>{
     Modal3.close();
     
 })
+
+
+//---------------------------------------------------------------------
+
+// sobre mi modal
+let abrirModal4 = document.getElementById("openM4");
+let cerrarModal4 = document.getElementById("closeM4");
+let Modal4 = document.querySelector(".modal4");
+
+
+abrirModal4.addEventListener("click", ()=>{
+    
+    Modal4.showModal();
+
+    })
+
+cerrarModal4.addEventListener("click", ()=>{
+    Modal4.close();
+    
+})
+
+//---------------------------------------------------------------------
+
+// habilidades modal
+let abrirModal5 = document.getElementById("openM5");
+let cerrarModal5 = document.getElementById("closeM5");
+let Modal5 = document.querySelector(".modal5");
+
+
+abrirModal5.addEventListener("click", ()=>{
+    
+    Modal5.showModal();
+
+    })
+
+cerrarModal5.addEventListener("click", ()=>{
+    Modal5.close();
+    
+})
+
 
 
 
