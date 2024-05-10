@@ -51,12 +51,14 @@ nav ul li{
 }
 
 .section1{
-    height: 450px;
-    border: 1px solid;
+    height: 480px;
+    border: 5px solid #48e;
     border-radius: 10px;
     height: 200px;
     width: 420px;
-    background:linear-gradient(yellow,orange);
+    background-color: white;
+
+    
     
 }
 .icons{
@@ -65,11 +67,14 @@ nav ul li{
     fill: #fff;
 }
 section{
+    
     height: 450px;
     border: 1px solid;
     border-radius: 10px;
     height: 300px;
     width: 420px;
+    border: 5px solid #48e;
+    background-color: white;
 
 }
 .flex-section1{
@@ -83,27 +88,24 @@ section{
     src: url("BebasNeue-Regular.ttf");
 }
 
-@font-face {
-    font-family: fuenteNueva2;
-    src: url("ArchivoBlack-Regular.ttf");
-}
-
 article{
     height: 450px;
-    border: 1px solid;
+    border: 5px solid #48e;
     border-radius: 10px;
     width: 300px;
     width: 420px;
+    background-color: #fff;
+    color: #48e;
+    
 }
 label{
     left: 0;
 }
 aside{
-    border: 1px solid;
+    border: 1px solid ;
     border-radius: 10px;
     width: 500px;
     background-color: #48e;
-    border-color:white;
     text-align: center;
 }
 
@@ -119,6 +121,16 @@ h2{
     color: black;
     font-family: fuenteNueva;
 }
+
+#botonSalir{
+    border: 2px solid black;
+    text-align: center;
+    background-color: #FF6961;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+}
+
 
 .h2-perfil{
     margin-left: 10px;
@@ -208,15 +220,28 @@ footer p{
 }
 
 /*Modificar el valor del div donde van a salir los proyectos*/
-/*Clases de las cajas*/
+/*Clases de las cajas de proyecto*/
 .P-1{
+    padding: 10px;
+    border-color: #000000;
+    border: 5px solid ;
+    border-radius: 15px;
+    width: 400px;
+    margin-left: 35px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    
+    
     
 }
-/*Contenedor de la cajas*/
+/*Contenedor de las cajas*/
 #P-1{
+    display: flex;
     flex-direction: column;
-    border-color: #fff;
-    border: 1px solid ;
-    border-radius: 10px ;
-
+    gap: 15px;
+    margin-top: 10px;
+    
 }

@@ -90,17 +90,19 @@ function Login() {
                             if (CorreoVerific == proyectList[proyecto].Correo) {
 
                                 //Div donde van a ir los proyectos:
-                                let P_1 = document.getElementById("P-1");
+                                let contenedor = document.getElementById("P-1");
                                 //Creacion de los contenedores
                                 const cont1 = document.createElement("div");
                                 cont1.classList.add("P-1");
-                                P_1.appendChild(cont1);
 
-                                cont1.innerHTML = proyectList[proyecto].titulo;
-                                cont1.innerHTML = proyectList[proyecto].descripcion;
-                                cont1.innerHTML = proyectList[proyecto].año;
+                                //Guarda los elementos creados en el div creados aqui:
+                                cont1.innerHTML = "Titulo:"+"<br>"+proyectList[proyecto].titulo +"<br><br>"+"Descripcion:" +"<br>"+ proyectList[proyecto].descripcion +"<br><br>"+"Año:"+"<br>"+ proyectList[proyecto].año;
+
+                                contenedor.appendChild(cont1);
                             }
                         }
+                        let ocultarBoton = document.getElementById("openM2");
+                        ocultarBoton.style.display = "none";
                         break;
                     }
                 }
@@ -113,12 +115,11 @@ function Login() {
             }else if(datos == 3){
                 alert("No existe ese correo. Registrese...");
             }
-            window.location.reload();
+            //window.location.reload();
         }
     }else{ 
         alert("No existen correos registrados.");
     }   
-    
 }
 
 //---------------------------------------------------------------------
@@ -130,11 +131,29 @@ function desLogearse() {
         cont_correo.innerHTML = "";
         cont_nom.innerHTML = "";
         cont_direccion.innerHTML = "";
+        
+
+        //Eliminacion de los portafolios de sesion:
+        let proyectList = JSON.parse(localStorage.getItem("Proyectos"));
+        let sesionIniciada = JSON.parse(localStorage.getItem("sesionAbierta"));
+        
+        for (const elemento in proyectList) {
+            if (sesionIniciada.Correo == proyectList[elemento].Correo) {
+
+                let contenido = document.querySelector(".P-1");
+                //contenido.style.display = "none";
+                
+                //Esto esta dando problemassss
+                contenido.remove();
+            }   
+        }
+        //Lo elimina de ultimo para que pueda recorrer el for:
         localStorage.removeItem("sesionAbierta");
-        //Elimina el contenido del apartado de los proyectos
-        //Div donde van a ir los proyectos:
-        let P_1 = document.getElementById("P-1");
-        console.log(P_1.contains); 
+
+        //Muestra el boton de registrarse
+        let ocultarBoton = document.getElementById("openM2");
+        ocultarBoton.style.display = "inline-block";
+        
     }else{
        alert("Aun no haz entrado a una cuenta.");
     }
@@ -161,27 +180,25 @@ function proyectos() {
         año : año.value
         
     };
-    proyectList = JSON.parse(localStorage.getItem("Proyectos")) || [];
-    proyectList.push(informacion);
-    localStorage.setItem("Proyectos", JSON.stringify(proyectList));
+     proyectList = JSON.parse(localStorage.getItem("Proyectos")) || [];
+     proyectList.push(informacion);
+     localStorage.setItem("Proyectos", JSON.stringify(proyectList));
 
 
      //Div donde van a ir los proyectos:
-     let P_1 = document.getElementById("P-1");
-     //Creacion de los contenedores
+     let Contenedor= document.getElementById("P-1");
+
+     //Creacion del elemento
      const cont1 = document.createElement("div");
+    
      cont1.classList.add("P-1");
-     //P_1.appendChild(cont1);
-     //Ocupo guardar los valores en el conteedor que esta dentro del div padr que es "P-1"
-
-     let container1= cont1.appendChild(titulo.value);
-     P_1.appendChild();
-     P_1.appendChild(cont1.appendChild(descripcion.value));
-     P_1.appendChild(cont1.appendChild(año.value));
-
-     //cont1.appendChild(descripcion.value);
-     //cont1.appendChild(año.value);
-
+     
+     //Guarda los elementos creados en el div creados aqui:
+     cont1.innerHTML = "<b>Titulo:<b>"+"<br>"+titulo.value +"<br><br>"+"Descripcion:" +"<br>"+ descripcion.value +"<br><br>"+"Año:"+"<br>"+ año.value;
+    
+     //Guarda los divs recientemente creados en el div del html:
+     Contenedor.appendChild(cont1);
+    
 }
 
 //---------------------------------------------------------------------
