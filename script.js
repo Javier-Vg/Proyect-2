@@ -98,18 +98,64 @@ function Login() {
                                 contenedor.appendChild(cont1);
                             }
                         }
-                        let ocultarBoton = document.getElementById("openM2");
-                        ocultarBoton.style.display = "none";
+
+                        //Extraccion de abouts:
+                        aboutList = JSON.parse(localStorage.getItem("SobreMi"));
+                        for (const about in aboutList) {
+
+                            if (CorreoVerific == aboutList[about].Correo) {
+
+                                //Div donde van a ir los proyectos:
+                                let contenedor = document.getElementById("S-1");
+                                //Creacion de los contenedores
+                                const cont1 = document.createElement("div");
+                                cont1.classList.add("S-1");
+
+                                //Guarda los elementos creados en el div creados aqui:
+                                cont1.innerHTML = "<b>Descripcion Personal:<b>"+"<br>"+aboutList[about].Descripcion +"<br><br>"+"Nacionalidad:" +"<br>"+ aboutList[about].Nacion +"<br><br>"+"Pais donde vive:"+"<br>"+aboutList[about].Pais;
+
+                                contenedor.appendChild(cont1);
+                            }
+                        }
+
+                        //Extraccion de skills:
+                        skillsList = JSON.parse(localStorage.getItem("skills"));
+                        for (const skill in skillsList) {
+
+                            if (CorreoVerific == skillsList[skill].Correo) {
+
+                                //Div donde van a ir los proyectos:
+                                let contenedor = document.getElementById("H-1");
+                                //Creacion de los contenedores
+                                const cont1 = document.createElement("div");
+                                cont1.classList.add("H-1");
+
+                                //Guarda los elementos creados en el div creados aqui:
+                                cont1.innerHTML = "<b>Habilidad#1:<b>"+"<br>"+skillsList[skill].camp1 +"<br><br>"+"Habilidad#2:" +"<br>"+ skillsList[skill].camp2 +"<br><br>"+"Habilidad#3:"+"<br>"+ skillsList[skill].camp3;
+
+                                contenedor.appendChild(cont1);
+                            }
+                        }
+                        let ocultarBotonRegister = document.getElementById("openM2");
+                        let botonSalirSesion = document.getElementById("botonSalir");
+                        let ocultarBotonLogin = document.getElementById("openM1");
+
+                        let MostrarBotonAbout = document.getElementById("openM5");
+                        let MostrarBotonProyect = document.getElementById("proyectosNav");
+                        let MostrarBotonSkils = document.getElementById("openM4");
+
+                        //Muestra y oculta botones del nav:
+                        botonSalirSesion.style.display = "inline-block";
+                        ocultarBotonRegister.style.display = "none";
+                        ocultarBotonLogin.style.display = "none";
+
+                        MostrarBotonAbout.style.display = "inline-block";
+                        MostrarBotonSkils.style.display = "inline-block";
+                        MostrarBotonProyect.style.display = "inline-block";
                         break;
                     }
                 }
             }
-
-
-            
-
-
-
 
 
             //Verifica si el correo o la contraseña existian en el localStorage.
@@ -137,27 +183,86 @@ function desLogearse() {
         cont_nom.innerHTML = "";
         cont_direccion.innerHTML = "";
         
-
-        //Eliminacion de los portafolios de sesion:
         let proyectList = JSON.parse(localStorage.getItem("Proyectos"));
         let sesionIniciada = JSON.parse(localStorage.getItem("sesionAbierta"));
         
+        let AboutList = JSON.parse(localStorage.getItem("SobreMi"));
+        let SkillsList = JSON.parse(localStorage.getItem("skills"));
+        
+        //Recorre los proyectos y los elimina de la pagina
         for (const elemento in proyectList) {
+            //Eliminacion de los portafolios de sesion:
             if (sesionIniciada.Correo == proyectList[elemento].Correo) {
+                let contenedor = document.getElementById("P-1");
                 
-                let contenido = document.querySelector(".P-1");
-                //contenido.style.display = "none";
+                //Verifica si existe contenido en 
+                if (contenedor.innerHTML != "") {
+                    let contenido = document.querySelector(".P-1");
+                    //contenido.style.display = "none";
                 
-                //Esto esta dando problemassss
-                contenido.remove();
-            }   
+                    contenido.remove();
+                }else{
+                    continue;
+                }
+            }    
+        }
+
+        //Recorre los about y los elimina de la pagina
+        for (const elemento in AboutList) {
+            //Eliminacion de los portafolios de sesion:
+            console.log("llego aqui 1")
+            //problema aquiiii
+            if (sesionIniciada.Correo == AboutList[elemento].Correo) {
+                console.log("llego aqui2")
+                let contenedor = document.getElementById("S-1");
+                
+                //Verifica si existe contenido en 
+                if (contenedor.innerHTML != "") {
+                    console.log("lllego aqui3")
+                    let contenido = document.querySelector(".S-1");
+                    //contenido.style.display = "none";
+
+                    contenido.remove();
+                }else{
+                    continue;
+                }
+            }     
+        }
+
+        //Recorre las skills y los elimina de la pagina
+        for (const elemento in SkillsList) {
+            if (sesionIniciada.Correo == SkillsList[elemento].Correo) {
+                let contenedor = document.getElementById("H-1");
+                
+                //Verifica si existe contenido en 
+                if (contenedor.innerHTML != "") {
+                    let contenido = document.querySelector(".H-1");
+                    //contenido.style.display = "none";
+                    contenido.remove();
+                }else{
+                    continue;
+                }
+            }  
         }
         //Lo elimina de ultimo para que pueda recorrer el for:
         localStorage.removeItem("sesionAbierta");
 
         //Muestra el boton de registrarse
-        let ocultarBoton = document.getElementById("openM2");
-        ocultarBoton.style.display = "inline-block";
+        let botonSalirSesion = document.getElementById("botonSalir");
+        let MostrarBotonRegister = document.getElementById("openM2");
+        let MostrarBotonLogin = document.getElementById("openM1");
+
+        let BorraBotonAbout = document.getElementById("openM5");
+        let BorraBotonProyect = document.getElementById("proyectosNav");
+        let BorraBotonSkils = document.getElementById("openM4");
+
+        MostrarBotonLogin.style.display = "inline-block";
+        MostrarBotonRegister.style.display = "inline-block";
+        botonSalirSesion.style.display = "none";
+
+        BorraBotonAbout.style.display = "none";
+        BorraBotonSkils.style.display = "none";
+        BorraBotonProyect.style.display = "none";
         
     }else{
        alert("Aun no haz entrado a una cuenta.");
@@ -171,7 +276,7 @@ let descripcion = document.getElementById("porta2");
 let año = document.getElementById("porta3");
 
 let proyectList = [];
-proyectList = JSON.parse(localStorage.getItem("Proyectos"));
+proyectList = JSON.parse(localStorage.getItem("Proyectos"));//borra esta linea a ver que pasa----------------------------------------------------------
 
 function proyectos() {
     
@@ -183,8 +288,8 @@ function proyectos() {
         //Error en volver a loguearse.
         Correo : sesionIniciada.Correo,
         año : año.value
-        
     };
+
      proyectList = JSON.parse(localStorage.getItem("Proyectos")) || [];
      proyectList.push(informacion);
      localStorage.setItem("Proyectos", JSON.stringify(proyectList));
@@ -203,40 +308,62 @@ function proyectos() {
     
      //Guarda los divs recientemente creados en el div del html:
      Contenedor.appendChild(cont1);
-    
 }
 
+let InfoPersonal = [];
+
 function AboutME() {
+    
+    InfoPersonal = JSON.parse(localStorage.getItem("SobreMi"));
+
     let descripcion_Personal = document.getElementById("descripPerson");
     let Nacionalidad = document.getElementById("nacion");
     let DondeVive = document.getElementById("pais");
 
+   
     let usuario = JSON.parse(localStorage.getItem("sesionAbierta"));
-    let InfoPersonal = [];
 
-    info ={
+    
+    informacion = {
         Descripcion: descripcion_Personal.value,
         Nacion: Nacionalidad.value,
-        Contraseña : usuario.Contraseña,
+        Correo : usuario.Correo,
         Pais : DondeVive.value
     };
 
 
     InfoPersonal = JSON.parse(localStorage.getItem("SobreMi")) || [];
-    InfoPersonal.push(info);
-    localStorage.setItem("SobreMi", JSON.stringify(info));
-    alert("Su informacion personal se agrego exitosamente");
+    InfoPersonal.push(informacion);
+    localStorage.setItem("SobreMi", JSON.stringify(InfoPersonal));
+
+     //Div donde van a ir los about:---------------------------------------------------
+     let Contenedor= document.getElementById("S-1");
+
+     //Creacion del elemento
+     const cont1 = document.createElement("div");
+    
+     cont1.classList.add("S-1");
+     
+     //Guarda los elementos creados en el div creados aqui:
+     cont1.innerHTML = "<b>Descripcion Personal:<b>"+"<br>"+descripcion_Personal.value +"<br><br>"+"Nacionalidad:" +"<br>"+ Nacionalidad.value +"<br><br>"+"Pais donde vive:"+"<br>"+ DondeVive.value;
+    
+     //Guarda los divs recientemente creados en el div del html:
+     Contenedor.appendChild(cont1);
+
+     alert("Su informacion personal se agrego exitosamente");
 }
 
-//---------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
 
+let skills = [];
 
 function Skills() {
+
+    skills = JSON.parse(localStorage.getItem("skills"));
+
     let campo1 = document.getElementById("camp1");
     let campo2 = document.getElementById("camp2");
     let campo3 = document.getElementById("camp3");
-
-    let skills = [];
 
     let usuario = JSON.parse(localStorage.getItem("sesionAbierta"));
 
@@ -249,8 +376,23 @@ function Skills() {
 
     skills = JSON.parse(localStorage.getItem("skills")) || [];
     skills.push(info);
-    localStorage.setItem("skills", JSON.stringify(info));
-    alert("Sus habilidades se agregaron exitosamente");
+    localStorage.setItem("skills", JSON.stringify(skills));
+
+     //Div donde van a ir los about:---------------------------------------------------
+     let Contenedor= document.getElementById("H-1");
+
+     //Creacion del elemento
+     const cont1 = document.createElement("div");
+    
+     cont1.classList.add("H-1");
+     
+     //Guarda los elementos creados en el div creados aqui:
+     cont1.innerHTML = "<b>Habilidad#1:<b>"+"<br>"+campo1.value +"<br><br>"+"Habilidad#2:" +"<br>"+ campo2.value +"<br><br>"+"Habilidad#3:"+"<br>"+ campo3.value;
+    
+     //Guarda los divs recientemente creados en el div del html:
+     Contenedor.appendChild(cont1);
+
+     alert("Sus habilidades se agregaron exitosamente");
 }
 
 //---------------------------------------------------------------------

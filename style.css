@@ -38,7 +38,10 @@ nav ul li a{
 
 nav ul li{
     list-style: none;
+   
 }
+
+
 
 .cont2{
     display: flex;
@@ -46,14 +49,15 @@ nav ul li{
     padding:25px;
     flex-direction: row;
     justify-content: center;
+    fill: #48e;
 }
 
 .section1{
     height: 480px;
     border: 5px solid #48e;
     border-radius: 10px;
-    height: 200px;
-    width: 420px;
+    height: 200px; 
+    width: 420px; 
     background-color: white;
     
 }
@@ -68,7 +72,7 @@ section{
     height: 450px;
     border: 1px solid;
     border-radius: 10px;
-    height: 300px;
+    height: 350px;
     width: 420px;
     border: 5px solid #48e;
     background-color: white;
@@ -86,7 +90,7 @@ section{
 }
 
 article{
-    height: 450px;
+    height: 404px;
     border: 5px solid #48e;
     border-radius: 10px;
     width: 300px;
@@ -104,6 +108,8 @@ aside{
     width: 500px;
     background-color: #48e;
     text-align: center;
+    overflow: auto;
+    max-height: 1050px ;
 }
 
 .img-usuario{
@@ -138,8 +144,6 @@ h2{
     margin-left: 10px;
     padding: 0;
     margin: 0;
-    font-family: fuenteNueva2 !important;
-    
 }
 
 p{
@@ -243,12 +247,36 @@ footer p{
     color: rgb(0, 0, 0);
     font-size: 20px;
     background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; 
     text-align: left;
-    
-    
-    
 }
+
+.S-1{
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 15px;
+    width: 315px;
+    margin-left: 35px;
+    color: white;
+    font-size: 20px;
+    background-color:mediumseagreen;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.H-1{
+    padding: 10px;
+    border: 5px solid ;
+    border-radius: 15px;
+    width: 315px;
+    margin-left: 35px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
 /*Contenedor de las cajas*/
 #P-1{
     display: flex;
