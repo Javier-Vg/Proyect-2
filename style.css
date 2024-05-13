@@ -4,18 +4,13 @@ body{
     background-color: #48e4;
 }
 
-
 .cont1{
     display: flex;
     flex-direction: column;
     border: 1px solid;
     position: sticky;
     top: 0;
-    /*
-    border-radius: 10px;
-    margin-left: 100px;
-    margin-right: 100px;
-    */
+    
 }
 
 div header h1{
@@ -41,8 +36,6 @@ nav ul li{
     list-style: none;
    
 }
-
-
 
 .cont2{
     display: flex;
@@ -85,6 +78,7 @@ section{
     margin-top: 45px;
 
 }
+
 @font-face {
     font-family: fuenteNueva;
     src: url("BebasNeue-Regular.ttf");
@@ -107,6 +101,7 @@ article{
 label{
     left: 0;
 }
+
 aside{
     border: 1px solid ;
     border-radius: 10px;
@@ -122,13 +117,13 @@ aside{
     height: 200px;
 }
 
-
 .img-usuario:hover{animation:rotate-vertical-center 0.4s} @keyframes rotate-vertical-center{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
 
 .section{
     width: 100px;
     height: 100px;
 }
+
 h2{
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -146,6 +141,7 @@ h2{
     font-size: 15px;
 
 }
+
 #openM3:hover{
     background-color: white;
     color: #48e;
@@ -163,8 +159,6 @@ h2:hover{animation:tracking-in-expand 0.4s linear both} @keyframes tracking-in-e
     border-radius: 10px;
 
 }
-
-
 
 .icons2{
     width: 30px;
@@ -266,7 +260,6 @@ input[type="submit"]:hover{
     width: 120px;
 
 }
-
 
 /*Modificar el valor del div donde van a salir los proyectos*/
 /*Clases de las cajas de proyecto*/

@@ -43,12 +43,6 @@ function RegistrarUsuario(){
     }   
 }
 
-
-
-//Imprime el valor de la llave, en este caso el del valor de "Correo".
-//let llave = JSON.parse(localStorage.getItem('llave7'));
-//console.log(llave.Correo);
-
 //---------------------------------------------------------------------
 
 function Login() {
@@ -93,7 +87,7 @@ function Login() {
                                 cont1.classList.add("P-1");
 
                                 //Guarda los elementos creados en el div creados aqui:
-                                cont1.innerHTML = "Titulo:"+"<br>"+proyectList[proyecto].titulo +"<br><br>"+"Descripcion:" +"<br>"+ proyectList[proyecto].descripcion +"<br><br>"+"Año:"+"<br>"+ proyectList[proyecto].año;
+                                cont1.innerHTML = "Titulo:"+"<br>"+proyectList[proyecto].titulo +"<br><br>"+"Descripcion:" +"<br>"+ proyectList[proyecto].descripcion +"<br><br>"+"Año:"+"<br>"+ proyectList[proyecto].año+"<br><br><a>https://github.com/Javier-Vg/Proyect-2.git</a>";
 
                                 contenedor.appendChild(cont1);
                             }
@@ -159,7 +153,6 @@ function Login() {
                 }
             }
 
-
             //Verifica si el correo o la contraseña existian en el localStorage.
             if (datos == 1) {
                 alert("Contraseña inválida para el correo proporcionado.");
@@ -168,7 +161,6 @@ function Login() {
             }else if(datos == 3){
                 alert("No existe ese correo. Registrese...");
             }
-            //window.location.reload();
         }
     }else{ 
         alert("No existen correos registrados.");
@@ -200,7 +192,6 @@ function desLogearse() {
                 //Verifica si existe contenido en 
                 if (contenedor.innerHTML != "") {
                     let contenido = document.querySelector(".P-1");
-                    //contenido.style.display = "none";
                 
                     contenido.remove();
                 }else{
@@ -212,10 +203,8 @@ function desLogearse() {
         //Recorre los about y los elimina de la pagina
         for (const elemento in AboutList) {
             //Eliminacion de los portafolios de sesion:
-            console.log("llego aqui 1")
-            //problema aquiiii
             if (sesionIniciada.Correo == AboutList[elemento].Correo) {
-                console.log("llego aqui2")
+                
                 let contenedor = document.getElementById("S-1");
                 
                 //Verifica si existe contenido en 
@@ -230,7 +219,6 @@ function desLogearse() {
                 }
             }     
         }
-
         //Recorre las skills y los elimina de la pagina
         for (const elemento in SkillsList) {
             if (sesionIniciada.Correo == SkillsList[elemento].Correo) {
@@ -239,7 +227,6 @@ function desLogearse() {
                 //Verifica si existe contenido en 
                 if (contenedor.innerHTML != "") {
                     let contenido = document.querySelector(".H-1");
-                    //contenido.style.display = "none";
                     contenido.remove();
                 }else{
                     continue;
@@ -308,7 +295,7 @@ function proyectos() {
      cont1.classList.add("P-1");
      
      //Guarda los elementos creados en el div creados aqui:
-     cont1.innerHTML = "<b>Titulo:<b>"+"<br>"+titulo.value +"<br><br>"+"Descripcion:" +"<br>"+ descripcion.value +"<br><br>"+"Año:"+"<br>"+ año.value;
+     cont1.innerHTML = "<b>Titulo:<b>"+"<br>"+titulo.value +"<br><br>"+"Descripcion:" +"<br>"+ descripcion.value +"<br><br>"+"Año:"+"<br>"+ año.value+"<br><br><a>https://github.com/Javier-Vg/Proyect-2.git</a>";
     
      //Guarda los divs recientemente creados en el div del html:
      Contenedor.appendChild(cont1);
@@ -327,7 +314,6 @@ function AboutME() {
    
     let usuario = JSON.parse(localStorage.getItem("sesionAbierta"));
 
-    
     informacion = {
         Descripcion: descripcion_Personal.value,
         Nacion: Nacionalidad.value,
@@ -357,7 +343,7 @@ function AboutME() {
      alert("Su informacion personal se agrego exitosamente");
 }
 
-//-------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 let skills = [];
 
@@ -382,7 +368,7 @@ function Skills() {
     skills.push(info);
     localStorage.setItem("skills", JSON.stringify(skills));
 
-     //Div donde van a ir los about:---------------------------------------------------
+     //Div donde van a ir los about:
      let Contenedor= document.getElementById("H-1");
 
      //Creacion del elemento
@@ -410,12 +396,12 @@ let Modal1 = document.querySelector(".modal1");
 abrirModal.addEventListener("click", ()=>{
     Modal1.showModal();
 
-    })
+ });
 
 cerrarModal.addEventListener("click", ()=>{
     Modal1.close();
     
-})
+});
 
 //---------------------------------------------------------------------
 
@@ -428,12 +414,12 @@ let Modal2 = document.querySelector(".modal2");
 abrirModal2.addEventListener("click", ()=>{
     Modal2.showModal();
 
-})
+});
 
 cerrarModal2.addEventListener("click", ()=>{
     Modal2.close();
     
-})
+});
 
 //---------------------------------------------------------------------
 
@@ -446,13 +432,12 @@ abrirModal3.addEventListener("click", ()=>{
     
     Modal3.showModal();
 
-    })
+});
 
 cerrarModal3.addEventListener("click", ()=>{
     Modal3.close();
     
-})
-
+});
 
 //---------------------------------------------------------------------
 
@@ -461,17 +446,16 @@ let abrirModal4 = document.getElementById("openM4");
 let cerrarModal4 = document.getElementById("closeM4");
 let Modal4 = document.querySelector(".modal4");
 
-
 abrirModal4.addEventListener("click", ()=>{
     
     Modal4.showModal();
 
-    })
+});
 
 cerrarModal4.addEventListener("click", ()=>{
     Modal4.close();
     
-})
+});
 
 //---------------------------------------------------------------------
 
@@ -480,17 +464,16 @@ let abrirModal5 = document.getElementById("openM5");
 let cerrarModal5 = document.getElementById("closeM5");
 let Modal5 = document.querySelector(".modal5");
 
-
 abrirModal5.addEventListener("click", ()=>{
     
     Modal5.showModal();
 
-    })
+});
 
 cerrarModal5.addEventListener("click", ()=>{
     Modal5.close();
     
-})
+});
 
 
 
