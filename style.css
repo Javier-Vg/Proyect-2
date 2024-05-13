@@ -1,0 +1,390 @@
+body{
+    background-color: black;
+    margin: 0;
+    background-color: #48e4;
+}
+
+
+.cont1{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    position: sticky;
+    top: 0;
+    /*
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    */
+}
+
+div header h1{
+    text-align: center;
+}
+
+nav{
+    background-color: #48e;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li{
+    list-style: none;
+   
+}
+
+
+
+.cont2{
+    display: flex;
+    gap: 30px;
+    padding:25px;
+    flex-direction: row;
+    justify-content: center;
+    fill: #48e;
+}
+
+.section1{
+    height: 480px;
+    border: 5px solid #48e;
+    border-radius: 10px;
+    height: 200px; 
+    width: 420px; 
+    background-color: white;
+    
+}
+
+.icons{
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+}
+
+section{   
+    height: 450px;
+    border: 1px solid;
+    border-radius: 10px;
+    height: 350px;
+    width: 420px;
+    border: 5px solid #48e;
+    background-color: white;
+}
+
+.flex-section1{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+
+}
+@font-face {
+    font-family: fuenteNueva;
+    src: url("BebasNeue-Regular.ttf");
+}
+@font-face {
+    font-family: fuenteNueva2;
+    src: url("RetroBoldy-Regular.ttf");
+}
+
+article{
+    height: 404px;
+    border: 5px solid #48e;
+    border-radius: 10px;
+    width: 300px;
+    width: 420px;
+    background-color: #fff;
+    color: #48e;
+    
+}
+label{
+    left: 0;
+}
+aside{
+    border: 1px solid ;
+    border-radius: 10px;
+    width: 500px;
+    background-color: #48e;
+    text-align: center;
+    overflow: auto;
+    max-height: 1050px ;
+}
+
+.img-usuario{
+    width: 200px;
+    height: 200px;
+}
+
+
+.img-usuario:hover{animation:rotate-vertical-center 0.4s} @keyframes rotate-vertical-center{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+
+.section{
+    width: 100px;
+    height: 100px;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+#openM3{
+    background-color: #48e;
+    color: white;
+    width: 140px;
+    height: 40px;
+    transition: all 500ms ease;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid white;
+    font-size: 15px;
+
+}
+#openM3:hover{
+    background-color: white;
+    color: #48e;
+    
+}
+
+h2:hover{animation:tracking-in-expand 0.4s linear both} @keyframes tracking-in-expand{0%{letter-spacing:-.2em;opacity:0}40%{opacity:.6}100%{opacity:1}}
+
+#botonSalir{
+    border: 2px solid black;
+    text-align: center;
+    background-color: #FF6961;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+
+}
+
+
+
+.icons2{
+    width: 30px;
+    height: 30px;
+
+}
+#cont-correo, #cont-nom, #cont-direccion{
+    margin-left: 10px;
+    padding: 0;
+    margin: 0;
+    font-family: fuenteNueva2;
+    
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.div-login{
+    text-align: center;
+}
+.div-register{
+    text-align: center;
+}
+.div-porta{
+    text-align: center;
+}
+
+.btn-login{
+    background-color: #48e;
+    color: #fff;
+    border-radius: 10px;
+    border-color: #48e;
+    font-size: 15px;
+    height: 40px;
+    width: 170px;
+
+}
+
+.btn-close{
+    background-color: #fff;
+    color: #48e;
+    border-radius: 10px;
+    border-color: #48e;
+    font-size: 13px;
+    height: 29px;
+    width: 70px;
+}
+
+.modal1{
+    width: 450px;
+    border-radius: 20px;
+
+}
+.modal2{
+    width: 400px;
+    border-radius: 20px;
+}
+.modal3{
+    width: 400px;
+    border-radius: 20px;
+}
+
+.modal4{
+    width: 300px;
+    border-radius: 20px;
+}
+
+.modal5{
+    width: 400px;
+    border-radius: 20px;
+    background-color: slateblue;
+    color: #fff;
+}
+
+
+.modal1::backdrop{
+    background-color: #0003;
+}
+
+.modal2::backdrop{
+    background-color: #0003;
+}
+.modal3::backdrop{
+    background-color: #0003;
+}
+.modal4::backdrop{
+    background-color: #0005;
+}
+.modal5::backdrop{
+    background-color: #0003;
+}
+
+input[type="submit"]{
+    transition: width 1s ease;
+}
+input[type="submit"]:hover{
+    width: 120px;
+
+}
+
+
+/*Modificar el valor del div donde van a salir los proyectos*/
+/*Clases de las cajas de proyecto*/
+.P-1{
+    padding: 10px;
+    border-color: #000000;
+    border: 5px solid ;
+    border-radius: 15px;
+    width: 400px;
+    margin-left: 35px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: left;
+    transition: padding 1s ease;
+}
+.P-1:hover{
+    padding: 16px;
+
+}
+
+.S-1{
+    padding: 10px;
+    border: 5px solid #48e;
+    border-radius: 15px;
+    width: 315px;
+    margin-left: 35px;
+    color: black;
+    font-size: 20px;
+    background-color: #9bfab0;
+    font-family: fuenteNueva;
+    letter-spacing: 2px;
+    text-align: center;
+    
+}
+
+.H-1{
+    padding: 10px;
+    border: 3px solid #48e;
+    border-radius: 15px;
+    width: 315px;
+    margin-left: 35px;
+    color: black;
+    font-size: 20px;
+    background-color: #fdfd96;
+    font-family: fuenteNueva;
+    text-align: center;
+}
+
+/*Contenedor de las cajas*/
+#P-1{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer{
+    background-color: #000c;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    top: 0;
+
+}
+footer p{
+    color: white;
+}
+
+.linea{
+    width: 300px;
+    height: 2px;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.iconosFooter{
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
