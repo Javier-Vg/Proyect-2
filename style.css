@@ -4,6 +4,7 @@ body{
     background-color: #48e4;
 }
 
+
 .cont1{
     display: flex;
     flex-direction: column;
@@ -88,6 +89,10 @@ section{
     font-family: fuenteNueva;
     src: url("BebasNeue-Regular.ttf");
 }
+@font-face {
+    font-family: fuenteNueva2;
+    src: url("RetroBoldy-Regular.ttf");
+}
 
 article{
     height: 404px;
@@ -116,14 +121,38 @@ aside{
     width: 200px;
     height: 200px;
 }
+
+
+.img-usuario:hover{animation:rotate-vertical-center 0.4s} @keyframes rotate-vertical-center{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+
 .section{
     width: 100px;
     height: 100px;
 }
 h2{
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
-    font-family: fuenteNueva;
 }
+
+#openM3{
+    background-color: #48e;
+    color: white;
+    width: 140px;
+    height: 40px;
+    transition: all 500ms ease;
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid white;
+    font-size: 15px;
+
+}
+#openM3:hover{
+    background-color: white;
+    color: #48e;
+    
+}
+
+h2:hover{animation:tracking-in-expand 0.4s linear both} @keyframes tracking-in-expand{0%{letter-spacing:-.2em;opacity:0}40%{opacity:.6}100%{opacity:1}}
 
 #botonSalir{
     border: 2px solid black;
@@ -132,7 +161,9 @@ h2{
     color: white;
     padding: 6px;
     border-radius: 10px;
+
 }
+
 
 
 .icons2{
@@ -144,6 +175,8 @@ h2{
     margin-left: 10px;
     padding: 0;
     margin: 0;
+    font-family: fuenteNueva2;
+    
 }
 
 p{
@@ -219,6 +252,12 @@ p{
 .modal3::backdrop{
     background-color: #0003;
 }
+.modal4::backdrop{
+    background-color: #0005;
+}
+.modal5::backdrop{
+    background-color: #0003;
+}
 
 input[type="submit"]{
     transition: width 1s ease;
@@ -228,12 +267,6 @@ input[type="submit"]:hover{
 
 }
 
-footer{
-    background-color: white;
-}
-footer p{
-    color: black;
-}
 
 /*Modificar el valor del div donde van a salir los proyectos*/
 /*Clases de las cajas de proyecto*/
@@ -249,31 +282,38 @@ footer p{
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif; 
     text-align: left;
+    transition: padding 1s ease;
+}
+.P-1:hover{
+    padding: 16px;
+
 }
 
 .S-1{
     padding: 10px;
-    border: 3px solid black;
+    border: 5px solid #48e;
     border-radius: 15px;
     width: 315px;
     margin-left: 35px;
-    color: white;
+    color: black;
     font-size: 20px;
-    background-color:mediumseagreen;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #9bfab0;
+    font-family: fuenteNueva;
+    letter-spacing: 2px;
     text-align: center;
+    
 }
 
 .H-1{
     padding: 10px;
-    border: 5px solid ;
+    border: 3px solid #48e;
     border-radius: 15px;
     width: 315px;
     margin-left: 35px;
-    color: rgb(0, 0, 0);
+    color: black;
     font-size: 20px;
-    background-color: orange;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fdfd96;
+    font-family: fuenteNueva;
     text-align: center;
 }
 
@@ -283,5 +323,68 @@ footer p{
     flex-direction: column;
     gap: 15px;
     margin-top: 10px;
-    
 }
+
+footer div{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer{
+    background-color: #000c;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    top: 0;
+
+}
+footer p{
+    color: white;
+}
+
+.linea{
+    width: 300px;
+    height: 2px;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.iconosFooter{
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

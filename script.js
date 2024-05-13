@@ -141,8 +141,9 @@ function Login() {
                         let ocultarBotonLogin = document.getElementById("openM1");
 
                         let MostrarBotonAbout = document.getElementById("openM5");
-                        let MostrarBotonProyect = document.getElementById("proyectosNav");
                         let MostrarBotonSkils = document.getElementById("openM4");
+
+                        let AñadirBtnProyect = document.getElementById("openM3");
 
                         //Muestra y oculta botones del nav:
                         botonSalirSesion.style.display = "inline-block";
@@ -151,7 +152,8 @@ function Login() {
 
                         MostrarBotonAbout.style.display = "inline-block";
                         MostrarBotonSkils.style.display = "inline-block";
-                        MostrarBotonProyect.style.display = "inline-block";
+
+                        AñadirBtnProyect.style.display = "inline-block"
                         break;
                     }
                 }
@@ -253,8 +255,9 @@ function desLogearse() {
         let MostrarBotonLogin = document.getElementById("openM1");
 
         let BorraBotonAbout = document.getElementById("openM5");
-        let BorraBotonProyect = document.getElementById("proyectosNav");
         let BorraBotonSkils = document.getElementById("openM4");
+
+        let OcultarAñadirProyect = document.getElementById("openM3");
 
         MostrarBotonLogin.style.display = "inline-block";
         MostrarBotonRegister.style.display = "inline-block";
@@ -262,7 +265,8 @@ function desLogearse() {
 
         BorraBotonAbout.style.display = "none";
         BorraBotonSkils.style.display = "none";
-        BorraBotonProyect.style.display = "none";
+
+        OcultarAñadirProyect.style.display = "none"
         
     }else{
        alert("Aun no haz entrado a una cuenta.");
@@ -345,7 +349,7 @@ function AboutME() {
      cont1.classList.add("S-1");
      
      //Guarda los elementos creados en el div creados aqui:
-     cont1.innerHTML = "<b>Descripcion Personal:<b>"+"<br>"+descripcion_Personal.value +"<br><br>"+"Nacionalidad:" +"<br>"+ Nacionalidad.value +"<br><br>"+"Pais donde vive:"+"<br>"+ DondeVive.value;
+     cont1.innerHTML = "SOBRE MI:<br><br><b>Descripcion Personal:<b>"+"<br>"+descripcion_Personal.value +"<br><br>"+"Nacionalidad:" +"<br>"+ Nacionalidad.value +"<br><br>"+"Pais donde vive:"+"<br>"+ DondeVive.value;
     
      //Guarda los divs recientemente creados en el div del html:
      Contenedor.appendChild(cont1);
@@ -438,7 +442,6 @@ let abrirModal3 = document.getElementById("openM3");
 let cerrarModal3 = document.getElementById("closeM3");
 let Modal3 = document.querySelector(".modal3");
 
-
 abrirModal3.addEventListener("click", ()=>{
     
     Modal3.showModal();
@@ -488,9 +491,6 @@ cerrarModal5.addEventListener("click", ()=>{
     Modal5.close();
     
 })
-
-
-
 
 
 
